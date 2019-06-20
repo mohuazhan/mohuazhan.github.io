@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://mohuazhan.github.io//favicon.ico?v=1561027317140">
+<link rel="shortcut icon" href="https://mohuazhan.github.io//favicon.ico?v=1561027571351">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://mohuazhan.github.io//styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://mohuazhan.github.io/">
-        <img src="https://mohuazhan.github.io//images/avatar.png?v=1561027317140" class="site-logo">
+        <img src="https://mohuazhan.github.io//images/avatar.png?v=1561027571351" class="site-logo">
         <h1 class="site-title">小莫的博客</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -134,16 +134,16 @@
 <h3 id="创建虚拟环境">创建虚拟环境</h3>
 <p>用python做项目要养成各项目间环境独立的习惯（当然如果使用的是docker那就方便多了）
 现在我创建一个名为/spiders的文件夹并在该文件下创建名为env_py2.7虚拟环境：</p>
-<pre><code>root@ubuntu:~# cd /spiders
+<pre><code class="language-shell">root@ubuntu:~# cd /spiders
 root@ubuntu:/spiders# virtualenv env_py2.7
 </code></pre>
 <p>激活环境与退出环境：</p>
-<pre><code>root@ubuntu:/spiders# source env_py2.7/bin/activate
+<pre><code class="language-shell">root@ubuntu:/spiders# source env_py2.7/bin/activate
 (env_py2.7) root@ubuntu:/spiders# deactivate
 </code></pre>
 <h3 id="创建项目并安装所有依赖">创建项目并安装所有依赖</h3>
 <p>在/spiders文件夹下创建/xingtu文件夹，代码和配置等就放在这下面了。</p>
-<pre><code>root@ubuntu:/spiders/xingtu# tree
+<pre><code class="language-shell">root@ubuntu:/spiders/xingtu# tree
 .
 ├── agent_proxy.py		# 此文件存放user-agents和代理
 ├── cookie.txt			# 此文件存放cookie
@@ -157,7 +157,7 @@ root@ubuntu:/spiders# virtualenv env_py2.7
 0 directories, 8 files
 </code></pre>
 <p>这个小爬虫要用到的库及作用如下，我把所有依赖写进requirements.txt：</p>
-<pre><code>pika	# 连接操作rabbitmq
+<pre><code class="language-txt">pika	# 连接操作rabbitmq
 requests	# 爬虫
 redis	# 连接redis
 pymongo	# 连接mongoDB
@@ -167,11 +167,11 @@ pandas	# 数据处理
 gevent	# 并发处理
 </code></pre>
 <p>在虚拟环境中直接安装所有依赖：</p>
-<pre><code>(env_py2.7) root@ubuntu:~# pip install -r /spiders/xingtu/requirements.txt
+<pre><code class="language-shell">(env_py2.7) root@ubuntu:~# pip install -r /spiders/xingtu/requirements.txt
 </code></pre>
 <h3 id="连接rabbitmq">连接RabbitMQ</h3>
 <p>记得把heartbeat设为0，省去手动重连的后顾之忧：</p>
-<pre><code>credentials = pika.PlainCredentials(账号, 密码)
+<pre><code class="language-python">credentials = pika.PlainCredentials(账号, 密码)
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='服务器IP',
                                                                credentials=credentials,
                                                                heartbeat=0 ))   # 设置heartbeat为0，意味着不检测心跳，server端不会主动断开连接
@@ -179,7 +179,7 @@ channel = connection.channel()
 </code></pre>
 <h3 id="创建发布队列发送urlsend_pagespy">创建发布队列，发送URL(send_pages.py)</h3>
 <p>创建一个名为'xingtu_page'的队列来开始发布我们的爬取链接吧：</p>
-<pre><code>def get_page(page):
+<pre><code class="language-python">def get_page(page):
     # url = '爬取 {} 的URL'.format(page)		# 更新url的page参数
     channel.queue_declare(queue='xingtu_page', durable=True)
     channel.basic_publish(exchange='',
@@ -198,12 +198,12 @@ if __name__ == '__main__':
 </code></pre>
 <h3 id="爬取达人列表get_kol_listpy">爬取达人列表(get_kol_list.py)</h3>
 <p>关于爬取中的超时和重试，可以自己定义，这里直接用requests封装好的：</p>
-<pre><code>req = requests.Session()
+<pre><code class="language-python">req = requests.Session()
 req.mount('http://', HTTPAdapter(max_retries=1))
 req.mount('https://', HTTPAdapter(max_retries=1))
 </code></pre>
 <p>消费者回调函数:</p>
-<pre><code>def callback(ch, method, properties, body):
+<pre><code class="language-python">def callback(ch, method, properties, body):
     try:
         '''调用get_kol函数爬取'''
         get_kol_id(body)
@@ -220,7 +220,7 @@ req.mount('https://', HTTPAdapter(max_retries=1))
         time.sleep(120)	# 爬取失败就等两分钟再继续
 </code></pre>
 <p>爬取并且发布消息到新队列：：</p>
-<pre><code>def get_kol_id(url):
+<pre><code class="language-python">def get_kol_id(url):
     headers = {'User-Agent': agent_proxy.get_agent()}
     cookies = open(u'/spiders/xingtu/cookie.txt','r').read()	# cookie写在cookie.txt里面
     cookies_dict = {}
@@ -250,7 +250,7 @@ req.mount('https://', HTTPAdapter(max_retries=1))
             pass
 </code></pre>
 <p>开始消费：</p>
-<pre><code>if __name__ == '__main__':
+<pre><code class="language-python">if __name__ == '__main__':
     channel.basic_consume('xingtu_page',
                           callback,
                           auto_ack=False)
@@ -258,7 +258,7 @@ req.mount('https://', HTTPAdapter(max_retries=1))
 </code></pre>
 <h3 id="爬取达人详细数据get_kol_detailpy">爬取达人详细数据(get_kol_detail.py)</h3>
 <p>消费者回调函数</p>
-<pre><code>def callback(ch, method, properties, body):
+<pre><code class="language-python">def callback(ch, method, properties, body):
     try:
         '''调用get_kol_detail函数爬取'''
         get_kol_detail(body)
@@ -275,7 +275,7 @@ req.mount('https://', HTTPAdapter(max_retries=1))
         time.sleep(120)
 </code></pre>
 <p>根据达人在该平台ID爬取达人详细数据：</p>
-<pre><code>def get_kol_detail(id_xingtu):
+<pre><code class="language-python">def get_kol_detail(id_xingtu):
     print id_xingtu
     headers = {'User-Agent': agent_proxy.get_agent()}
     cookies = open(u'/spiders/xingtu/cookie.txt','r').read()	# cookie写在cookie.txt里面
@@ -308,7 +308,7 @@ req.mount('https://', HTTPAdapter(max_retries=1))
 </code></pre>
 <h3 id="实时更新达人详细数据send_id_apipy">实时更新达人详细数据(send_id_api.py)</h3>
 <p>请求的json数据是该达人在抖音平台的ID（这里并未对请求的数据进行加密，如果是企业级开发的话对API的安全性和并发性能应做更加谨慎的设计），如果达人在该平台则提示「已添加」，否则提示「未收录」。</p>
-<pre><code>server = flask.Flask(__name__)
+<pre><code class="language-python">server = flask.Flask(__name__)
 CORS(server, resources=r'/*')
 
 @server.route('/douyinid', methods=['get', 'post'])
@@ -332,12 +332,12 @@ def registerPost():
     return reply
 </code></pre>
 <p>启动flask API服务：</p>
-<pre><code>if __name__ == '__main__':
+<pre><code class="language-python">if __name__ == '__main__':
     WSGIServer(('0.0.0.0', 端口), server).serve_forever()
 </code></pre>
 <h2 id="启动项目">启动项目</h2>
 <p>所有脚本的启动我就交给<strong>supervisor</strong>这个进程管理工具啦，配置也是相当地简单，每一个脚本的运行单独作为一个进程（当然可以通过定义类来把所有脚本写成一个框架，但进程相互独立也有好处，至少在没留log文件的时候调试起来要方便的多），在/spiders/xingtu/xingtu_supervisord.conf中写入以下配置：</p>
-<pre><code>[program:send_pages]
+<pre><code class="language-config">[program:send_pages]
 command=/spiders/env_py2.7/bin/python /spiders/xingtu/send_pages.py
 #priority是权重，数字越大，优先级越高
 priority=999
@@ -353,11 +353,9 @@ stdout_logfile_backups=10
 
 [program:get_kol_list]
 command=/spiders/env_py2.7/bin/python /spiders/xingtu/get_kol_list.py
-#priority是权重，数字越大，优先级越高
 priority=998
 autostart=true
 autorestart=unexpected
-#startsecs表示进程启动多长时间后视为正常运行
 startsecs=0
 startretries=3
 redirect_stderr=true
@@ -367,11 +365,9 @@ stdout_logfile_backups=10
 
 [program:get_kol_detail]
 command=/spiders/env_py2.7/bin/python /spiders/xingtu/get_kol_detail.py
-#priority是权重，数字越大，优先级越高
 priority=997
 autostart=true
 autorestart=unexpected
-#startsecs表示进程启动多长时间后视为正常运行
 startsecs=0
 startretries=3
 redirect_stderr=true
@@ -381,11 +377,9 @@ stdout_logfile_backups=10
 
 [program:send_id_api]
 command=/spiders/env_py2.7/bin/python /spiders/xingtu/send_id_api.py
-#priority是权重，数字越大，优先级越高
 priority=996
 autostart=true
 autorestart=unexpected
-#startsecs表示进程启动多长时间后视为正常运行
 startsecs=0
 startretries=3
 redirect_stderr=true
@@ -394,13 +388,13 @@ stdout_logfile_maxbytes=10MB
 stdout_logfile_backups=10
 </code></pre>
 <p>我的supervisor是在全局环境中的python2.7中安装的，激活环境：</p>
-<pre><code>root@ubuntu:~# source activate python2.7
+<pre><code class="language-shell">root@ubuntu:~# source activate python2.7
 </code></pre>
 <p>通过supervisor运行所有脚本：</p>
-<pre><code>(python2.7) root@ubuntu:~# supervisord -c /spiders/xingtu/xingtu_supervisord.conf
+<pre><code class="language-shell">(python2.7) root@ubuntu:~# supervisord -c /spiders/xingtu/xingtu_supervisord.conf
 </code></pre>
 <p>查看supervisor的运行状态:</p>
-<pre><code>(python2.7) root@ubuntu:~# supervisorctl -c /spiders/xingtu/xingtu_supervisord.conf status
+<pre><code class="language-shell">(python2.7) root@ubuntu:~# supervisorctl -c /spiders/xingtu/xingtu_supervisord.conf status
 get_kol_detail                   RUNNING   pid 100986, uptime 0:00:03
 get_kol_list                     RUNNING   pid 100987, uptime 0:00:03
 send_id_api                      RUNNING   pid 100985, uptime 0:00:03
@@ -411,7 +405,7 @@ send_pages                       EXITED    Jun 03 04:54 PM
 看一下RabbitMQ的控制面板：
 <img src="https://mohuazhan.github.io//post-images/1561024615286.png" alt="">
 查看一下redis：</p>
-<pre><code>root@ubuntu:~# redis-cli -a 密码
+<pre><code class="language-shell">root@ubuntu:~# redis-cli -a 密码
 127.0.0.1:6379&gt; hgetall hash_kolid 
   1) &quot;3891903335244664&quot;
   2) &quot;6680368576479625224&quot;
