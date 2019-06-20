@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mohuazhan.github.io/</id>
     <title>小莫的博客</title>
-    <updated>2019-06-20T09:55:03.212Z</updated>
+    <updated>2019-06-20T09:58:48.252Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mohuazhan.github.io/"/>
     <link rel="self" href="https://mohuazhan.github.io//atom.xml"/>
@@ -32,7 +32,8 @@
 <li>2.每周更新一次数据；</li>
 <li>3.可随时插入或更新某达人详情数据。</li>
 </ul>
-<p><strong>画个巨Low的架构图来看看：</strong></p>
+<p><strong>画个巨Low的架构图来看看：</strong>
+<img src="https://mohuazhan.github.io//post-images/1561024672343.png" alt=""></p>
 <h2 id="技术评估">技术评估：</h2>
 <p>**1.爬取频率：**测测测！不要盲目自信设个延迟就溜了！需求一实际上是最基础的数据爬取和存储，还没涉及到数据处理层。但由于需要登录的cookie我只有一个，爬取频率要控制好（请求后延迟或消费者回调延迟都可以），线程嘛也不敢多开（python的multiprocessing模块中pool() + pool.map()开启多线程很方便，谨慎食用咯）。而多条MQ队列同时发布和消费本身就是多线程啊，How to DO？切记，如果没有十足的把握（让爬虫足够稳定），别把不同的消费者写在同一个脚本里。除非……把爬虫脚本写成API，通过发送请求来回调不同的队列消息，效果也不错，这样甚至能够通过设置请求频率来控制爬取频率。</p>
 <p>**2.数据去重：**每周更新一次数据意味着每周都要爬一次该平台的所有达人，一般每周新增的达人不多，所以要在爬取时做去重处理。首先说一下为什么选择了mongoDB而不是MySQL？由于该平台爬取到的是json数据（包含list），故用mongoDB存储再好不过（懒人必备，这样就不用考虑存哪些字段，全拿下就行了，后期再按需求处理）。而对于json数据的处理，尽可能和爬取分开，在爬取过程中批量处理结构化数据，会非常影响爬虫效率，又或者，将爬取和数据处理分开在不同线程处理（切勿让数据处理延长单个线程的时间），可服务器资源有限的前提下这并不是一个高效的方法。既然不用MySQL，那去重我选择Redis。用极限思维来考虑，当爬虫级别上千万以后（这里还没考虑高并发读写），每一次查询都会消耗不少时间，爬虫效率也会逐渐降低，所以要在读写上尽可能提高效率。把键值对存到Redis的哈希表（上锁）来实现去重，效果可以媲美MySQL。</p>
@@ -316,9 +317,11 @@ get_kol_list                     RUNNING   pid 100987, uptime 0:00:03
 send_id_api                      RUNNING   pid 100985, uptime 0:00:03
 send_pages                       EXITED    Jun 03 04:54 PM
 </code></pre>
-<p>我还可以通过浏览器访问supervisor的服务端，对所有进程进行重启，暂停等操作：</p>
-<p>看一下RabbitMQ的控制面板：</p>
-<p>查看一下redis：</p>
+<p>我还可以通过浏览器访问supervisor的服务端，对所有进程进行重启，暂停等操作：
+<img src="https://mohuazhan.github.io//post-images/1561024648823.png" alt="">
+看一下RabbitMQ的控制面板：
+<img src="https://mohuazhan.github.io//post-images/1561024615286.png" alt="">
+查看一下redis：</p>
 <pre><code>root@ubuntu:~# redis-cli -a 密码
 127.0.0.1:6379&gt; hgetall hash_kolid 
   1) &quot;3891903335244664&quot;
@@ -327,8 +330,9 @@ send_pages                       EXITED    Jun 03 04:54 PM
   4) &quot;6638835397155618820&quot;
   ......
 </code></pre>
-<p>找一个已经在数据库的达人ID，测试一下更新达人详细数据的API：</p>
-<p>这个入门级的小爬虫，大功告成啦！</p>
+<p>找一个已经在数据库的达人ID，测试一下更新达人详细数据的API：
+<img src="https://mohuazhan.github.io//post-images/1561024656872.png" alt="">
+这个入门级的小爬虫，大功告成啦！</p>
 <h2 id="写在后面">写在后面</h2>
 <p>今天是高考的日子，前几天我无意中翻出了我去年毕业答辩的论文，想起了我的恩师们，同学们，我的大学舍友，历历在目。每一年毕业季会让人走向一座更高的山，跨向更广的海，但也让我们学会承受离别带来的伤感。</p>
 <p>有时候我会后悔，为什么上学时候不好好学习，这个世界太多太多的魅力源自于<strong>science and technology</strong>，而自己只能羡慕别人的飞跃。但更多时候是欣喜，我的舍友既没有和我讨论薛定谔的猫也没有辩证忒休斯之船，但我记得，去年世界杯我们因为C罗的帽子戏法狂欢一宿，每年S系列赛的时候我们都会拿好小凳子围着给中国队加油，每次检查作业的前一晚都会手机闪光灯都会「派上用场」，每一次考试都会花光前面16周的记忆和运气......当流年成为历史，当老去成为定势，自己就会小心翼翼擦拭掉这些尘封回忆的灰，静默怀念。</p>
