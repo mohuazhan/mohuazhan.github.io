@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://mohuazhan.github.io//favicon.ico?v=1561701857296">
+<link rel="shortcut icon" href="https://mohuazhan.github.io//favicon.ico?v=1561702788694">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://mohuazhan.github.io//styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://mohuazhan.github.io/">
-        <img src="https://mohuazhan.github.io//images/avatar.png?v=1561701857296" class="site-logo">
+        <img src="https://mohuazhan.github.io//images/avatar.png?v=1561702788694" class="site-logo">
         <h1 class="site-title">小莫的博客</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -366,9 +366,26 @@
 <ul>
 <li><strong>抖音账号抓取（今年3月）</strong>：</li>
 </ul>
-<p>|平台|工具|数据库|数据量级|效率|
-|-- |-- |-- |-- |
-|抖音|fiddler，python|MongoDB|十万级|日均10000+|</p>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>工具</th>
+<th>数据库</th>
+<th>数据量级</th>
+<th>效率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抖音</td>
+<td>fiddler，python</td>
+<td>MongoDB</td>
+<td>十万级</td>
+<td>日均10000+</td>
+</tr>
+</tbody>
+</table>
 <p>优质的不同类别的短视频账号是秒派助手数据平台的主要监控对象。按照平台对账号的甄选条件，我通过fiddler抓包在抖音平台上先后抓取了超过10万个账号（带分类）的数据，提供给公司使用。</p>
 <blockquote>
 <p><em>总结：如果先是全平台爬取，后进行账号分类，效率应该会更高。当时在有限的设备和网络资源基本上，无法评估全量爬取的用时，因此修改方案</em></p>

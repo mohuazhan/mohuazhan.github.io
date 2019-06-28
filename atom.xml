@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mohuazhan.github.io/</id>
     <title>小莫的博客</title>
-    <updated>2019-06-28T06:04:26.826Z</updated>
+    <updated>2019-06-28T06:19:50.585Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mohuazhan.github.io/"/>
     <link rel="self" href="https://mohuazhan.github.io//atom.xml"/>
@@ -277,9 +277,26 @@
 <ul>
 <li><strong>抖音账号抓取（今年3月）</strong>：</li>
 </ul>
-<p>|平台|工具|数据库|数据量级|效率|
-|-- |-- |-- |-- |
-|抖音|fiddler，python|MongoDB|十万级|日均10000+|</p>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>工具</th>
+<th>数据库</th>
+<th>数据量级</th>
+<th>效率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抖音</td>
+<td>fiddler，python</td>
+<td>MongoDB</td>
+<td>十万级</td>
+<td>日均10000+</td>
+</tr>
+</tbody>
+</table>
 <p>优质的不同类别的短视频账号是秒派助手数据平台的主要监控对象。按照平台对账号的甄选条件，我通过fiddler抓包在抖音平台上先后抓取了超过10万个账号（带分类）的数据，提供给公司使用。</p>
 <blockquote>
 <p><em>总结：如果先是全平台爬取，后进行账号分类，效率应该会更高。当时在有限的设备和网络资源基本上，无法评估全量爬取的用时，因此修改方案</em></p>
