@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mohuazhan.github.io/</id>
     <title>小莫的博客</title>
-    <updated>2019-06-25T07:39:57.981Z</updated>
+    <updated>2019-06-28T05:53:29.139Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mohuazhan.github.io/"/>
     <link rel="self" href="https://mohuazhan.github.io//atom.xml"/>
@@ -10,6 +10,316 @@
     <logo>https://mohuazhan.github.io//images/avatar.png</logo>
     <icon>https://mohuazhan.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, 小莫的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[一个程序爱好者的简历]]></title>
+        <id>https://mohuazhan.github.io//post/yi-ge-cheng-xu-ai-hao-zhe-de-jian-li</id>
+        <link href="https://mohuazhan.github.io//post/yi-ge-cheng-xu-ai-hao-zhe-de-jian-li">
+        </link>
+        <updated>2019-06-28T05:47:37.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="个人基本信息">个人基本信息</h3>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>性别</th>
+<th>年龄</th>
+<th>身高</th>
+<th>籍贯</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>莫华瞻</td>
+<td>男</td>
+<td>25</td>
+<td>167cm</td>
+<td>广东省廉江市</td>
+</tr>
+</tbody>
+</table>
+<h3 id="学历信息">学历信息</h3>
+<table>
+<thead>
+<tr>
+<th>学历</th>
+<th>毕业院校</th>
+<th>专业</th>
+<th>院校所在地</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大学本科</td>
+<td>华北科技学院</td>
+<td>应用统计学</td>
+<td>河北廊坊</td>
+</tr>
+</tbody>
+</table>
+<h3 id="技能信息">技能信息</h3>
+<table>
+<thead>
+<tr>
+<th>开发语言</th>
+<th>常用框架</th>
+<th>其他工具</th>
+<th>方向</th>
+<th>入门时长</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>python2.7&amp;3.5</td>
+<td>Scrapy，Flask，Django</td>
+<td>SPSS，Access，R，fiddler</td>
+<td>爬虫，数据分析，人工智能</td>
+<td>8个月</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>开发环境</th>
+<th>数据库</th>
+<th>中间件</th>
+<th>分布式监控</th>
+<th>协作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td>MySQL，MongoDB，Redis</td>
+<td>RabbitMQ</td>
+<td>Zabbix</td>
+<td>Git</td>
+</tr>
+</tbody>
+</table>
+<h3 id="其他信息">其他信息</h3>
+<table>
+<thead>
+<tr>
+<th>政治面貌</th>
+<th>工作经验</th>
+<th>技能证书</th>
+<th>语言</th>
+<th>电子邮箱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中共党员</td>
+<td>一年</td>
+<td>无</td>
+<td>普通话，粤语</td>
+<td>919656720@qq.com</td>
+</tr>
+</tbody>
+</table>
+<h2 id="大学四年20142018">大学四年（2014—2018）</h2>
+<ul>
+<li><strong>负责</strong>：大一期间当班长，注重班级学风，经常组织班级活动，也是班上的「装软件小能手」</li>
+<li><strong>积极</strong>：在学院晚会上两次出演小品和一次合唱；连续三年参加校运会短跑接力项目</li>
+<li><strong>勤勉</strong>：四年内两次获得二等奖学金，两次获得三等奖学金</li>
+</ul>
+<h2 id="工作一年-in-杭州">工作一年（ In 杭州 ）</h2>
+<h3 id="深圳怡亚通供应链有限公司金服平台-杭州省区">深圳怡亚通供应链有限公司金服平台（ 杭州省区 ）</h3>
+<pre><code>在职时间：2018年7月12日——2018年9月17日
+
+职务：见习信贷经理
+
+业绩：0 单
+</code></pre>
+<h4 id="见习经历">见习经历：</h4>
+<p>杭州省区是EA金服开辟不久的职场，存量客户不多。分配带我的老师傅在我入职一个星期后便离职了，在没有人帮带的情况下，我积极向另一位经验丰富的信贷经理请教，至今仍然感谢他当时的悉心传授。</p>
+<p>每周我坚持跑三天地推，从一天10家到一天30家，杭州江干区到下城区的商超和各大副食品市场都留下我的足迹，每天晚上都会整理优化小本本上的话术，每次「出征」前都会在脑海中多次模拟和对方沟通的场景；平时有遇到合作平台提供的名单，我会积极主动去电销，过后反复听通话记录，也虚心向同事请教话术技巧。</p>
+<p>可惜好景不长，9月初怡亚通宣布大规模裁员，我也在「优化名单」内。剩下的半个月时间，我努力去执行营销方案，却无法收获一笔信贷业务，于是在9月17日提请离职。</p>
+<h3 id="杭州壹马科技有限公司秒派助手">杭州壹马科技有限公司（<a href="http://dsp.banmaim.com">秒派助手</a>）</h3>
+<pre><code>在职时间：2018年9月18日至今
+
+职务：打杂
+</code></pre>
+<h4 id="工作经历">工作经历：</h4>
+<ul>
+<li><strong>文本分类器（去年9月—10月）</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>语言</th>
+<th>领域</th>
+<th>常用库</th>
+<th>算法</th>
+<th>参考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>win7</td>
+<td>python</td>
+<td>NLP</td>
+<td>jieba，numpy，pandas</td>
+<td>tf&amp;idf，textrank</td>
+<td><a href="http://www.doc88.com/p-332769038066.html">Tmsvm</a></td>
+</tr>
+</tbody>
+</table>
+<p>入职后第一次接触python，当时公司正在给一款智能媒资产品设计文本分析模块，要实现给新闻文本分类的功能。我从NLP自然语言处理这一块入门，下载的数据集是清华新闻分类语料。先是对比云平台和开源（如：jieba，StanfordCoreNLP，pyltp等）的分词能力，然后手写tf&amp;idf算法抽取中心词，文本摘要和中心词提取也有使用第三方库。最后是用的分类算法是参考了浙江大学张知临先生开源的基于SVM的线性分类器源码。</p>
+<p>整个训练花了半个月的时间（公司设备条件较落后，由于RAM有限，最终确定训练样本量为70万条新闻），平均每两天产出一个模型。我用训练出来的模型进行预测，根据准确率和召回率调优参数，反复迭代，最终分类器准确率达到82%（预测样本1000条）。</p>
+<blockquote>
+<p><em>总结：当时尚未熟悉深度学习的前沿资讯，后来又继续了解了TensorFlow框架结合CNN和RNN算法做的文本分类。</em></p>
+</blockquote>
+<ul>
+<li><strong>爬虫 &amp; 数据分析 &amp; 算法设计（去年11月—12月）</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>语言</th>
+<th>领域</th>
+<th>常用库</th>
+<th>数据库</th>
+<th>数据量级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td>python</td>
+<td>爬虫，数据分析</td>
+<td>requests，selenium，pandas，matplotlib，wsgiref，urllib2</td>
+<td>MongoDB</td>
+<td>十万级</td>
+</tr>
+</tbody>
+</table>
+<p>11月，公司要开展短视频平台的数据中心开发，招了一个爬虫工程师，我跟着他学习。公司要求爬取抖音，快手，秒拍和微博等平台的短视频，我负责快手和秒拍的数据爬取，以单个账号为单位，爬取该账号下的视频以及点赞评论等互动数据。爬取任务每小时执行一次，互动数据为列表递增。</p>
+<p>12月，根据首批爬取的数据进行数据分析，分析所有平台的账号的数据变化趋势，用聚类分析按互动数据给账号分层次，从而调整各层次账号的爬取频率。然后设计了一套算法，计算单条视频当前的热度指数，飙升指数以及单个账号的传播力指数。（先考虑各项指数涉及的数据维度，根据指数展示的需求，进行数值拟合，调优参数，最终计算各维度权重。在算法中，考虑数据对齐和时间因素，参数与权重会动态调整）</p>
+<blockquote>
+<p><em>总结：爬虫并未涉及到 js解密和 APP逆向破解，代理和加签算法分别向服务商购买的，我在这期间仅入门了最基本的爬虫。算法设计方面，我在今年5月份再次进行了优化</em></p>
+</blockquote>
+<ul>
+<li><strong>撰写公众号文章 &amp; 视频剪辑 &amp; 社群运营 &amp; 微信机器人（去年12月底—今年1月）</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>任务</th>
+<th>工具</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>微信公众号</td>
+<td>写文章，剪视频</td>
+<td>python(数据处理)，Excel，Adobe Premiere</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>语言</th>
+<th>使用库</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>微信机器人</td>
+<td>python</td>
+<td>itchat，requests</td>
+<td>实时查看各类榜单，分享链接获取抖音无水印视频</td>
+</tr>
+</tbody>
+</table>
+<p>1月，公司开始运营微信公众号（<strong>黑马数据助手</strong>），我负责给公众号写文章（文章中包含用爬取来的素材剪辑的视频）。</p>
+<p>如：<a href="https://mp.weixin.qq.com/s?__biz=MzUzOTk5Njg5MQ==&amp;mid=2247484272&amp;idx=1&amp;sn=cb797aaa8855e33bc429073b62d56e90&amp;chksm=fb3ea4c4cc492dd2b4084395b6b7dd076890664508c9b909e56008761658ec5bc5f07862ddb2&amp;mpshare=1&amp;scene=1&amp;srcid=0618ytoPDBGlxlen4aMqOdX5&amp;from=singlemessage&amp;ascene=1&amp;devicetype=android-26&amp;version=2700033c&amp;nettype=ctnet&amp;abtest_cookie=BQABAAoACwASABMAFQAGACOXHgBWmR4AvpkeANyZHgD0mR4AC5oeAAAA&amp;lang=zh_CN&amp;pass_ticket=2%2BNK42CAdH9Mshaaop6lSYq1KYIbHvWqJzAZuwH2RPEfYOVWqoRsbddQciWgfNj4&amp;wx_header=1">人民日报的「抖音一分钟」</a>和 <a href="https://mp.weixin.qq.com/s?__biz=MzUzOTk5Njg5MQ==&amp;mid=2247484308&amp;idx=1&amp;sn=a7f836a51b6f6f79e72cafa212bcaf4b&amp;chksm=fb3ea420cc492d364ae57cf3a4bbb41f13d8ea1343ec51ee53fbf81adaa16abedcf2a5a2c057&amp;scene=4&amp;subscene=126&amp;ascene=0&amp;devicetype=android-26&amp;version=2700033c&amp;nettype=ctnet&amp;abtest_cookie=BQABAAoACwASABMAFQAGACOXHgBWmR4AvpkeANyZHgD0mR4AC5oeAAAA&amp;lang=zh_CN&amp;pass_ticket=2%2BNK42CAdH9Mshaaop6lSYq1KYIbHvWqJzAZuwH2RPEfYOVWqoRsbddQciWgfNj4&amp;wx_header=1">盘一盘抖音「人气最高」职业</a></p>
+<p>同时，公众号文章会将读者引流到微信群（面向媒体人），我在执行<strong>拉新—&gt;促活—&gt;留存</strong>这套流程的同时，编写了一个微信机器人进行群管理（我分了两个模块来写，一部分是API组，用于实现功能；另一部分是请求调用组，用于接受群信息并返回准确信息），用于帮助群成员实时查询使用。</p>
+<blockquote>
+<p><em>总结：公众号吸引了不少搞融媒体的业内人士关注，我在这个过程中进一步接触了媒体行业，5G的到来和 AI 逐步成熟为融媒体发展深度赋能</em></p>
+</blockquote>
+<ul>
+<li><strong>社群运营 &amp; 数据运营 &amp; SEM优化 &amp; 内容推广（今年3月至今）</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>社群规模</th>
+<th>推广平台</th>
+<th>用户类别</th>
+<th>月均用户增长</th>
+<th>日均活跃用户</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>300人</td>
+<td>微信，抖音，百度等</td>
+<td>广告主，达人&amp;MCN机构</td>
+<td>500+</td>
+<td>100+</td>
+</tr>
+</tbody>
+</table>
+<p>公司的SaaS产品2.0——<a href="http://dsp.banmaim.com">秒派助手</a>在4月10号上线。在上线前，我针对产品面向的用户群体，撰写业务逻辑，通过微信，抖音等社交平台寻找机构进行合作推广。</p>
+<p>正式上线后，我通过社群运营给用户进行商务对接，吸引关注抖音变现的群体来使用产品。一方面通过挖掘需求来优化产品，提高用户粘性；另一方面，在运营中寻找一套可以形成闭环的以数据产品为基础，商业模式为核心的业务逻辑。</p>
+<p>同时，我也负责产品的百度SEM推广和官网的内容编辑，每天结合GA统计分析和后台数据产出数据运营报表。</p>
+<blockquote>
+<p><em>总结：运营方法<strong>出台—&gt;探索实践—&gt;总结—&gt;优化</strong>的周期短灵活高，我得以及时思考和调整。但是，团队缺少有经验的运营管理者指导，运营效率较低，在瓶颈期也难以突破</em></p>
+</blockquote>
+<ul>
+<li><strong>抖音账号抓取（今年3月）</strong>：</li>
+</ul>
+<p>|平台|工具|数据库|数据量级|效率|
+|-- |-- |-- |-- |
+|抖音|fiddler，python|MongoDB|十万级|日均10000+|</p>
+<p>优质的不同类别的短视频账号是秒派助手数据平台的主要监控对象。按照平台对账号的甄选条件，我通过fiddler抓包在抖音平台上先后抓取了超过10万个账号（带分类）的数据，提供给公司使用。</p>
+<blockquote>
+<p><em>总结：如果先是全平台爬取，后进行账号分类，效率应该会更高。当时在有限的设备和网络资源基本上，无法评估全量爬取的用时，因此修改方案</em></p>
+</blockquote>
+<ul>
+<li><strong>商品分类器（非图像识别，3月底v1.0版，5月升级v2.0版）</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>语音</th>
+<th>领域</th>
+<th>使用库&amp;框架</th>
+<th>数据量级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>python</td>
+<td>爬虫，NLP，Web</td>
+<td>requests，multiprocessing，jieba；flask</td>
+<td>百万级</td>
+</tr>
+</tbody>
+</table>
+<p>公司爬取回来的商品需要带有分类。3月份，我提取北京大学开放数据中心的电商数据集的所有商品名称及对应分类，训练了一个商品分类模型，并集成API交付给后端使用。</p>
+<p>5月初，我抽空重新训练调优该模型。我从京东爬取了230万条商品信息（西刺免费代理，开了4个线程跑），利用商品名称及京东商品分类标准，重新训练好新的分类模型并部署使用。</p>
+<blockquote>
+<p><em>总结：商品分类器仍可以通过以下方法再优化：新增图像识别；维护商品词库；校准判别阈值等</em></p>
+</blockquote>
+<ul>
+<li><strong>星图平台爬虫系统搭建（今年5月底）</strong>：</li>
+</ul>
+<p>星图平台为抖音用于商务对接的官方平台，其数据维度极具参考价值。应公司要求，我单独搭建星图平台的爬虫系统。</p>
+<p>项目雏形可见文章：<a href="https://mohuazhan.github.io/post/liao-yi-ge-jian-dan-de-pa-chong/">聊一个简单的爬虫</a></p>
+<blockquote>
+<p><em>总结：首先该爬虫考虑的主要是前期使用，对于后期数据增长的处理，在系统中并没有体现。弊端有：爬虫非分布式，尽管消息队列做了持久化，宕机后仍需人工处理，不能及时切换；增量式爬取数据极快，数据库未搭建集群，也无切片处理；在只有一个 cookie 的情况下，未尝试使用代理，爬虫效率低；cookie 到期时未设置发送邮件提醒，会造成一定程度的数据缺失；在这里用 Flask 编写的 API 使用了 gevent 来处理异步非阻塞，并未进行压测，在高并发时应对比Tornado，Flask，Django（使用 gunicon/uwsgi + supeivisor + nginx 部署），nameko（RPC协议）四者的性能；还有一些关于 MQ 和 Redis 的使用上，都有不到位的地方</em></p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[聊一个简单的爬虫]]></title>
         <id>https://mohuazhan.github.io//post/liao-yi-ge-jian-dan-de-pa-chong</id>
